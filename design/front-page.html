@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The World in One Day — 17 November 2026</title>
+<style>
+  @page { size: 1024px 1024px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --paper: #f6f3ea;
+    --ink: #15140f;
+    --muted: #6d675b;
+    --rule: #c9c2b2;
+    --red: #a81c1c;
+  }
+
+  html, body {
+    width: 1024px;
+    height: 1024px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    position: relative;
+    width: 1024px;
+    height: 1024px;
+    padding: 52px 56px 44px;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(1200px 700px at 20% -10%, #fffdf7 0%, rgba(255,253,247,0) 60%),
+      radial-gradient(900px 600px at 110% 110%, #efe9db 0%, rgba(239,233,219,0) 55%),
+      var(--paper);
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead { display: flex; align-items: flex-end; justify-content: space-between; }
+  .masthead h1 {
+    font-size: 46px;
+    line-height: 0.96;
+    letter-spacing: -1.1px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .masthead h1 span { color: var(--red); }
+  .masthead .issue {
+    text-align: right;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .masthead .issue strong { color: var(--ink); font-weight: 700; }
+
+  .dateline {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 3px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .dateline .flag { color: var(--red); font-weight: 700; }
+
+  /* ---------- lead ---------- */
+  .lead {
+    display: grid;
+    grid-template-columns: 1fr 316px;
+    gap: 30px;
+    padding: 26px 0 22px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .kicker {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+  }
+  .lead h2 {
+    font-size: 45px;
+    line-height: 1.04;
+    letter-spacing: -0.8px;
+    font-weight: 700;
+  }
+  .lead h2 em { font-style: italic; }
+  .lead .standfirst {
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #3a372f;
+    max-width: 540px;
+  }
+  .lead .byline {
+    margin-top: 14px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- globe ---------- */
+  .globe { position: relative; display: flex; align-items: center; justify-content: center; }
+  .globe svg { width: 316px; height: 316px; display: block; }
+  .globe .caption {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* ---------- lower grid ---------- */
+  .lower {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 30px;
+    padding-top: 20px;
+  }
+  .story { padding: 4px 0 16px; border-bottom: 1px solid var(--rule); }
+  .story:nth-child(3), .story:nth-child(4) { border-bottom: none; }
+  .story .region {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 7px;
+  }
+  .story h3 {
+    font-size: 21px;
+    line-height: 1.16;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+  .story p {
+    margin-top: 7px;
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #45413a;
+  }
+
+  /* ---------- markets ---------- */
+  .markets {
+    margin-top: 6px;
+    border-top: 3px solid var(--ink);
+    padding-top: 13px;
+    display: grid;
+    grid-template-columns: 150px repeat(4, 1fr);
+    align-items: center;
+    gap: 8px;
+  }
+  .markets .label {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .quote { border-left: 1px solid var(--rule); padding-left: 14px; }
+  .quote .name {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .quote .move {
+    margin-top: 2px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: -0.3px;
+  }
+  .quote .pct {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--red);
+  }
+
+  .colophon {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 9.5px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #8b8577;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <h1>The World<br>in <span>One Day</span></h1>
+    <div class="issue">
+      <div><strong>Global Edition</strong></div>
+      <div>Tuesday · 17 November 2026</div>
+      <div>Vol. XI · No. 321</div>
+    </div>
+  </div>
+
+  <div class="dateline">
+    <div class="flag">The day in 1,000 words or fewer</div>
+    <div>Politics · Conflict · Markets · Asia</div>
+  </div>
+
+  <div class="lead">
+    <div>
+      <div class="kicker">The summit</div>
+      <h2>Xi, Putin and Trump<br>to meet in Shenzhen —<br><em>a first for three powers</em></h2>
+      <p class="standfirst">Beijing confirmed the 19 November meeting on Monday: the first face-to-face
+        summit of the Chinese, Russian and American leaders, billed as a bid to steady great-power
+        relations while wars in Ukraine and the Middle East grind on.</p>
+      <div class="byline">Diplomacy · Shenzhen, 19 November</div>
+    </div>
+
+    <div class="globe">
+      <svg viewBox="0 0 316 316" role="img" aria-label="A globe with three marked capitals">
+        <defs>
+          <radialGradient id="sphere" cx="36%" cy="30%" r="78%">
+            <stop offset="0%" stop-color="#fffdf6"/>
+            <stop offset="62%" stop-color="#ece5d4"/>
+            <stop offset="100%" stop-color="#d8cfba"/>
+          </radialGradient>
+        </defs>
+        <circle cx="158" cy="150" r="110" fill="url(#sphere)" stroke="#15140f" stroke-width="1.4"/>
+        <g fill="none" stroke="#8a8375" stroke-width="0.9" opacity="0.75">
+          <ellipse cx="158" cy="150" rx="110" ry="39"/>
+          <ellipse cx="158" cy="150" rx="110" ry="77"/>
+          <ellipse cx="158" cy="150" rx="39" ry="110"/>
+          <ellipse cx="158" cy="150" rx="77" ry="110"/>
+          <line x1="48" y1="150" x2="268" y2="150"/>
+        </g>
+        <!-- Shenzhen -->
+        <circle cx="228" cy="178" r="6.5" fill="#a81c1c"/>
+        <circle cx="228" cy="178" r="13" fill="none" stroke="#a81c1c" stroke-width="1.2" opacity="0.55"/>
+        <text x="222" y="206" text-anchor="middle" font-family="Helvetica Neue, Arial" font-size="10"
+              font-weight="700" letter-spacing="1.2" fill="#15140f">SHENZHEN</text>
+        <!-- Moscow -->
+        <circle cx="194" cy="104" r="4.5" fill="#15140f"/>
+        <text x="194" y="92" text-anchor="middle" font-family="Helvetica Neue, Arial" font-size="9"
+              letter-spacing="1" fill="#6d675b">MOSCOW</text>
+        <!-- Washington -->
+        <circle cx="94" cy="138" r="4.5" fill="#15140f"/>
+        <text x="100" y="126" text-anchor="middle" font-family="Helvetica Neue, Arial" font-size="9"
+              letter-spacing="1" fill="#6d675b">WASHINGTON</text>
+        <path d="M94 138 Q144 88 194 104" fill="none" stroke="#a81c1c" stroke-width="1.1" stroke-dasharray="3 4" opacity="0.7"/>
+        <path d="M194 104 Q220 132 228 178" fill="none" stroke="#a81c1c" stroke-width="1.1" stroke-dasharray="3 4" opacity="0.7"/>
+      </svg>
+      <div class="caption">Three capitals, one table</div>
+    </div>
+  </div>
+
+  <div class="lower">
+    <div class="story">
+      <div class="region">Ukraine</div>
+      <h3>Russia reports record drone interceptions for a second day</h3>
+      <p>Moscow said its air defences downed an unprecedented number of Ukrainian drones overnight,
+        the second straight day of mass launches, as strikes on energy sites continued.</p>
+    </div>
+
+    <div class="story">
+      <div class="region">Yemen</div>
+      <h3>Saudi-backed forces reinforce Aden against Houthi pressure</h3>
+      <p>Troops loyal to the internationally recognised government bolstered defences around the
+        southern port city, as Houthi forces pressed closer to the front line.</p>
+    </div>
+
+    <div class="story">
+      <div class="region">Japan</div>
+      <h3>Russian aircraft breach airspace near Fukuoka; Tokyo protests</h3>
+      <p>Japan scrambled fighters before dawn after two aircraft entered airspace near Fukuoka —
+        the first confirmed incursion on that route since 2013 — and lodged a formal protest.</p>
+    </div>
+
+    <div class="story">
+      <div class="region">Markets</div>
+      <h3>Wall Street slides as Nvidia tumbles before earnings</h3>
+      <p>The Dow closed 737 points lower, the S&amp;P 500 fell sharply and the Nasdaq dropped 2.5%
+        as chip stocks sold off a day before Nvidia's quarterly results.</p>
+    </div>
+  </div>
+
+  <div class="markets">
+    <div class="label">Close</div>
+    <div class="quote">
+      <div class="name">Dow</div>
+      <div class="move">−737</div>
+      <div class="pct">−1.41%</div>
+    </div>
+    <div class="quote">
+      <div class="name">S&amp;P 500</div>
+      <div class="move">−1.91%</div>
+      <div class="pct">sharp fall</div>
+    </div>
+    <div class="quote">
+      <div class="name">Nasdaq</div>
+      <div class="move">−2.46%</div>
+      <div class="pct">tech selloff</div>
+    </div>
+    <div class="quote">
+      <div class="name">Nvidia</div>
+      <div class="move">−4.1%</div>
+      <div class="pct">pre-earnings</div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <div>The World in One Day · a picture of 17 November 2026</div>
+    <div>Compiled from open reporting</div>
+  </div>
+
+</div>
+</body>
+</html>
